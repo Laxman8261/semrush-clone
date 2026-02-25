@@ -1,8 +1,19 @@
-import { ReactNode } from "react";
+import { cn } from "@/utils/cn";
 
-export default function Card({ children }: { children: ReactNode }) {
+export default function Card({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="bg-white shadow-md rounded-xl p-6">
+    <div
+      className={cn(
+        "bg-white rounded-lg border p-6",
+        className
+      )}
+    >
       {children}
     </div>
   );
